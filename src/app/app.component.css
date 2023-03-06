@@ -1,0 +1,9 @@
+.app {
+  border: 2px double gray;
+  padding: 0.5rem;
+}
+
+.menu,
+.menu_2 {
+  text-align: center;
+}

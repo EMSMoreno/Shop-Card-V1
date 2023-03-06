@@ -1,0 +1,12 @@
+<div class="formcomponent">
+
+  <!-- <input type="text" placeholder="adiciona um produto à lista de compras" #list> -->
+  <select name="list" id="list" [(ngModel)]="product">
+    <option [ngValue]="item" *ngFor="let item of products">{{ item.name }}</option>
+  </select>
+
+  <button type="button" (click)="add(product)">Adicionar</button>
+</div>
+
+<!--ngValue passa o objeto (info do objeto) -->
+<!-- value passa o produto -->

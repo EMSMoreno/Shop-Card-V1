@@ -1,0 +1,12 @@
+<li class="item">
+  <strong>{{ item.name }} </strong> - <i>Preço: {{ item.price }}</i>
+  <br />
+  <input type="number" min="1" max="10" [(ngModel)]="item.qty" (input)="updatePrice(item.qty)" />
+  <button (click)="removefromBasket()">Remover</button>
+</li>
+
+  <!-- lista ordenada com template do nome do item + texto
+  input com input definido fazendo ref. à função para atualizar preço
+  butão com ação de clique (input) fazendo ref à função para atualizar cesto
+  template do cesto com desvio condicional, caso tenha quantidade, produto pode ser removido
+  caso contrário, podemos atualizar-->

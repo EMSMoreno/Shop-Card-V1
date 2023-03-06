@@ -1,0 +1,25 @@
+<div class="app">
+  <h1 class="menu">Lista de Compras:</h1>
+  <h2 class="menu_2">escolha o que pretende</h2>
+
+  <ul>
+    <app-item *ngFor="let item of cart; let i = index" [item]="item" (result)="setItem($event, i)"></app-item>
+  </ul>
+
+  <!--app-item -> referência ao comp. filho; 
+    corre um ngFor que permite percorrer cada item do array
+  faço ref. ao [item] definido no comp.filho do TS (input)
+  faço ref ao (result) definido no comp. filho do TS (output)
+  chamo a função setItem, definida tbm no TS do filho-->
+
+  <!--o obj $event tem info necessárias para o método ser aplicado.
+    Caso seja do DOM, tem as propriedades de um objeto-->
+
+  <app-total [list]="cart"></app-total>
+
+  <!--app-total -> referência ao comp.filho;
+    faço ref. ao [list] definido no comp.filho do TS (input)-->
+
+    <app-form (addProduct)="addItem($event)" [products]="list"></app-form>
+    
+</div>
